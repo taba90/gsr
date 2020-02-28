@@ -1,4 +1,4 @@
-# GeoServices Rest API
+# GeoServices ESRI Rest API
 
 This plugin provides an ArcGIS REST compatibility API.
 
