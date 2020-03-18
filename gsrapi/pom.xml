@@ -3,12 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.geoserver</groupId>
+        <artifactId>community</artifactId>
+        <version>2.18-SNAPSHOT</version>
+    </parent>
 
-  <groupId>org.boundlessgeo</groupId>
-  <artifactId>gsr</artifactId>
-  <packaging>jar</packaging>
-  <name>GeoServices REST API</name>
-  <version>0.5.1</version>
+    <groupId>org.geoserver.community</groupId>
+    <artifactId>gs-gsrapi</artifactId>
+    <version>2.18-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>GSRAPI Module</name>
+    <description>ArcGIS REST compatibility API</description>
+
 
   <repositories>
     <repository>
@@ -55,39 +62,23 @@
     <dependency>
       <groupId>org.geoserver</groupId>
       <artifactId>gs-restconfig</artifactId>
-      <version>${gs.version}</version>
-      <scope>provided</scope>
-    </dependency>
+      <version>${project.version}</version>
+ì    </dependency>
     <dependency>
       <groupId>org.geoserver</groupId>
       <artifactId>gs-kml</artifactId>
-      <version>${gs.version}</version>
-      <scope>provided</scope>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.5.3</version>
-    </dependency>
-    <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+      </dependency>
+      <dependency>
       <groupId>org.geotools</groupId>
       <artifactId>gt-main</artifactId>
       <version>${gt.version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
-
     <!--  Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -110,21 +101,20 @@
     <dependency>
       <groupId>org.geoserver</groupId>
       <artifactId>gs-main</artifactId>
-      <version>${gs.version}</version>
+      <version>${project.version}</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.geoserver</groupId>
       <artifactId>gs-restconfig</artifactId>
-      <version>${gs.version}</version>
+      <version>${project.version}</version>
       <classifier>tests</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>xmlunit</groupId>
       <artifactId>xmlunit</artifactId>
-      <version>1.6</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -136,7 +126,7 @@
     <dependency>
       <groupId>org.geoserver</groupId>
       <artifactId>gs-wms</artifactId>
-      <version>${gs.version}</version>
+      <version>${project.version}</version>
       <scope>test</scope>
       <classifier>tests</classifier>
     </dependency>
@@ -148,22 +138,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.geotools</groupId>
-      <artifactId>gt-main</artifactId>
-      <version>19.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.vividsolutions</groupId>
       <artifactId>jts</artifactId>
-      <version>1.8</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.geotools</groupId>
-      <artifactId>gt-main</artifactId>
-      <version>21-SNAPSHOT</version>
-      <scope>compile</scope>
     </dependency>
   </dependencies>
 
